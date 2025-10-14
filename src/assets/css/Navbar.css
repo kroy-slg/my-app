@@ -1,0 +1,39 @@
+/* Navbar.css */
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: center; /* Center links horizontally */
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 0 0 10px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Links */
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Active link style */
+.navbar a.active {
+    background-color: #004080;
+    color: #fff;
+}

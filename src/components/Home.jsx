@@ -1,44 +1,20 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
-import "../assets/css/Home.css"; // Import CSS
+import '../assets/css/Home.css'
 
-const Home = ({ user, onLogin, onLogout }) => {
-    const navigate = useNavigate();
+const Home = () => {
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-    const handleLogin = (userInfo) => {
-        onLogin(userInfo);
-        navigate("/profile");
+    const handleLogout = () => {
+        localStorage.removeItem("loggedInUser");
+        window.location.reload();
     };
 
     return (
         <div className="home-container">
-            {!user && <Header />}
-
-            <main className="home-main">
-                {/*<div className="home-card">*/}
-                {/*    {!user ? (*/}
-                {/*        <GoogleAuth user={user} onLogin={handleLogin} onLogout={onLogout} />*/}
-                {/*    ) : (*/}
-                {/*        <>*/}
-                {/*            <h1 className="home-title">*/}
-                {/*                Hey {user.name} <span className="hand-emoji">👋</span>, let's start*/}
-                {/*            </h1>*/}
-                {/*            <button*/}
-                {/*                onClick={() => navigate("/profile")}*/}
-                {/*                className="profile-btn"*/}
-                {/*            >*/}
-                {/*                Go to Profile*/}
-                {/*            </button>*/}
-                {/*        </>*/}
-                {/*    )}*/}
-                {/*</div>*/}
-            </main>
-
-            {!user && <Footer />}
+            <h2>Hello {user ? user.name : "User"}!</h2>
+            {!user && <p>Please sign up, and then sign in to continue</p>}
+            {user && <button className="logout-btn" onClick={handleLogout}>Logout</button>}
         </div>
     );
-};
+}
 
 export default Home;

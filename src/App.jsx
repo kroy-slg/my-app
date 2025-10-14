@@ -1,32 +1,19 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import React, { useState } from "react";
-import About from "./components/About.jsx";
-import Profile from "./components/Profile.jsx";
-import Home from "./components/Home.jsx";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import SignUp from "./components/SignUp.jsx";
+import SignIn from "./components/SignIn.jsx";
 
 function App() {
-    const [user, setUser] = useState(null);
-
     return (
-        <Routes>
-            <Route
-                path="/"
-                element={<Home user={user} onLogin={setUser} onLogout={() => setUser(null)} />}
-            />
-            <Route
-                path="/profile"
-                element={
-                    user ? (
-                        // <Profile user={user} onLogout={() => setUser(null)} />
-                        <Profile user={user} onLogout={() => setUser(null)} />
-
-                    ) : (
-                        <Navigate to="/" replace />
-                    )
-                }
-            />
-            <Route path="/about" element={<About />} />
-        </Routes>
+        <>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/sign-up" element={<SignUp />} />
+                <Route path="/sign-in" element={<SignIn />} />
+            </Routes>
+        </>
     );
 }
 
