@@ -4,13 +4,30 @@ import "../assets/css/Navbar.css";
 const Navbar = () => {
     const location = useLocation();
 
+    const navItems = [
+        { path: "/about", label: "About" },
+        { path: "/services", label: "Services" },
+        { path: "/contact", label: "Contact" },
+        { path: "/sign-up", label: "Sign Up" },
+        { path: "/sign-in", label: "Sign In" },
+    ];
+
     return (
         <nav className="navbar">
-            <Link className={location.pathname === "/" ? "active" : ""} to="/">Home</Link>
-            <Link className={location.pathname === "/sign-up" ? "active" : ""} to="/sign-up">Sign Up</Link>
-            <Link className={location.pathname === "/sign-in" ? "active" : ""} to="/sign-in">Sign In</Link>
+            <ul className="nav-list">
+                {navItems.map((item) => (
+                    <li
+                        key={item.path}
+                        className={`nav-item ${
+                            location.pathname === item.path ? "active" : ""
+                        }`}
+                    >
+                        <Link to={item.path}>{item.label}</Link>
+                    </li>
+                ))}
+            </ul>
         </nav>
     );
-}
+};
 
 export default Navbar;
