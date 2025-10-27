@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import GoogleAuth from "../components/GoogleAuth.jsx";
 import "../assets/css/Home.css";
-import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const [user, setUser] = useState(null);
-    const navigate = useNavigate();
 
     // Load saved user on mount
     useEffect(() => {
@@ -17,14 +15,12 @@ const Home = () => {
     const handleLogin = (data) => {
         setUser(data);
         localStorage.setItem("loggedInUser", JSON.stringify(data));
-        // navigate("/container");
     };
 
     // Handle logout
     const handleLogout = () => {
         localStorage.removeItem("loggedInUser");
         setUser(null);
-        navigate("/"); // back to home after logout
     };
 
     return (
@@ -43,6 +39,7 @@ const Home = () => {
                     <p className="home-text">
                         You are now logged in. Click below to log out.
                     </p>
+                    <img src={user.picture} alt={user.name} className="user-pic" />
                     <button className="logout-btn" onClick={handleLogout}>
                         Logout
                     </button>
