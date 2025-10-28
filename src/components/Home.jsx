@@ -27,8 +27,8 @@ const Home = () => {
         <div className="home-container">
             {!user ? (
                 <>
-                    <h2 className="home-title">WELCOME TO TSR INVOICE</h2>
-                    <p className="home-text">Please sign in with Google to continue</p>
+                    {/*<h2 className="home-title">WELCOME TO TSR INVOICE</h2>*/}
+                    {/*<p className="home-text">Please sign in with Google to continue</p>*/}
                     <GoogleAuth onLogin={handleLogin} />
                 </>
             ) : (
