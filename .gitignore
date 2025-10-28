@@ -27,4 +27,4 @@ dist-ssr
 
 
 # Confidentials
-.env
+#.env
