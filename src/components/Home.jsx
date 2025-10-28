@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import GoogleAuth from "../components/GoogleAuth.jsx";
 import "../assets/css/Home.css";
+import { collection, addDoc, serverTimestamp, query, where, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 
 const Home = () => {
     const [user, setUser] = useState(null);
@@ -12,9 +14,29 @@ const Home = () => {
     }, []);
 
     // Handle login success
-    const handleLogin = (data) => {
+    const handleLogin = async (data) => {
         setUser(data);
         localStorage.setItem("loggedInUser", JSON.stringify(data));
+
+        try {
+            const usersRef = collection(db, "users");
+            const q = query(usersRef, where("email", "==", data.email));
+            const existing = await getDocs(q);
+
+            if (existing.empty) {
+                await addDoc(usersRef, {
+                    name: data.name,
+                    email: data.email,
+                    picture: data.picture,
+                    loginAt: serverTimestamp(),
+                });
+                console.log("✅ User added to Firestore");
+            } else {
+                console.log("ℹ️ User already exists in Firestore");
+            }
+        } catch (error) {
+            console.error("🔥 Error saving user:", error);
+        }
     };
 
     // Handle logout
@@ -27,8 +49,6 @@ const Home = () => {
         <div className="home-container">
             {!user ? (
                 <>
-                    {/*<h2 className="home-title">WELCOME TO TSR INVOICE</h2>*/}
-                    {/*<p className="home-text">Please sign in with Google to continue</p>*/}
                     <GoogleAuth onLogin={handleLogin} />
                 </>
             ) : (
