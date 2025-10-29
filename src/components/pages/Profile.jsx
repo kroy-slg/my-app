@@ -1,6 +1,6 @@
 import React from "react";
-import "../assets/css/Profile.css";
-import TopHeader from "./layout/TopHeader.jsx";
+import "../../assets/css/Profile.css";
+import TopHeader from "../layout/TopHeader.jsx";
 
 const Profile = ({ user }) => {
     return (

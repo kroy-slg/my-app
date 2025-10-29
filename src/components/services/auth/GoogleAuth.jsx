@@ -1,5 +1,5 @@
 import { useGoogleLogin } from "@react-oauth/google";
-import "../assets/css/GoogleAuth.css";
+import "../../../assets/css/GoogleAuth.css";
 
 export default function GoogleAuth({ onLogin }) {
     const login = useGoogleLogin({

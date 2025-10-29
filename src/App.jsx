@@ -1,11 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Navbar from "./components/Navbar";
-import About from "./components/About.jsx";
-import Services from "./components/Services.jsx";
-import Contact from "./components/Contact.jsx";
-import GetStarted from "./components/GetStarted.jsx";
-import Profile from "./components/Profile.jsx";
+import Home from "../src/components/pages/Home.jsx";
+import Navbar from "../src/components/layout/Navbar.jsx";
+import About from "../src/components/pages/About.jsx";
+import Services from "../src/components/pages/Services.jsx";
+import Contact from "../src/components/pages/Contact.jsx";
+import Profile from "../src/components/pages/Profile.jsx";
 
 function App() {
     return (
@@ -16,7 +15,6 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/get-started" element={<GetStarted />} />
                 <Route path="/profile" element={<Profile />} />
             </Routes>
         </>

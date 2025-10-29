@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import GoogleAuth from "../components/GoogleAuth.jsx";
-import "../assets/css/Home.css";
+import GoogleAuth from "../services/auth/GoogleAuth.jsx";
+import "../../assets/css/Home.css";
 import { collection, addDoc, serverTimestamp, query, where, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../services/firebase";
 import {useNavigate} from "react-router-dom";
 
 const Home = () => {
