@@ -3,9 +3,11 @@ import GoogleAuth from "../components/GoogleAuth.jsx";
 import "../assets/css/Home.css";
 import { collection, addDoc, serverTimestamp, query, where, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
+import {useNavigate} from "react-router-dom";
 
 const Home = () => {
     const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
     // Load saved user on mount
     useEffect(() => {
@@ -17,6 +19,7 @@ const Home = () => {
     const handleLogin = async (data) => {
         setUser(data);
         localStorage.setItem("loggedInUser", JSON.stringify(data));
+        navigate("/profile");
 
         try {
             const usersRef = collection(db, "users");
