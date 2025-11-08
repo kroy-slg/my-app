@@ -1,21 +1,29 @@
-import { Routes, Route } from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
 import Home from "../src/components/pages/Home.jsx";
 import Navbar from "../src/components/layout/Navbar.jsx";
 import About from "../src/components/pages/About.jsx";
 import Services from "../src/components/pages/Services.jsx";
 import Contact from "../src/components/pages/Contact.jsx";
 import Profile from "../src/components/pages/Profile.jsx";
+import {useState} from "react";
 
 function App() {
+    const [user, setUser] = useState(null);
     return (
         <>
             <Navbar />
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home user={user} onLogin={setUser} onLogout={() => setUser(null)} />}/>
+                <Route path="/profile" element={user ? (
+                    <Profile user={user} onLogout={() => setUser(null)} />
+                ) : (
+                    <Navigate to="/" replace />
+                )}
+                />
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/profile" element={<Profile />} />
+                {/*<Route path="/profile" element={<Profile />} />*/}
             </Routes>
         </>
     );
