@@ -15,7 +15,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home user={user} onLogin={setUser} onLogout={() => setUser(null)} />}/>
                 <Route path="/profile" element={user ? (
-                    <Profile user={user} onLogout={() => setUser(null)} />
+                    <Profile user={user} onLogOut={() => setUser(null)} />
                 ) : (
                     <Navigate to="/" replace />
                 )}

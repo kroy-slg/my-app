@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProfilePopup from "./ProfilePopup.jsx";
 
-const ProfileButton = ({ user }) => {
+const ProfileButton = ({ user, onLogOut }) => {
     const [showProfile, setShowProfile] = useState(false);
 
     return (
@@ -17,10 +17,15 @@ const ProfileButton = ({ user }) => {
                 </svg>
             </button>
 
-
             {showProfile && (
-
-                <ProfilePopup user={user} onClose={() => setShowProfile(false)} />
+                <ProfilePopup
+                    user={user}
+                    onClose={() => setShowProfile(false)}
+                    onLogOut={() => {
+                        onLogOut();           // ✅ Call logout from parent
+                        setShowProfile(false);
+                    }}
+                />
             )}
         </>
     );
