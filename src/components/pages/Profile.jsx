@@ -6,14 +6,13 @@ import Sidebar from "../layout/Sidebar.jsx";
 const Profile = ({ user, onLogOut }) => {
     return (
         <div className="profile-container">
-            <main className="profile-main">
-                <div className="profile-content">
-                    <div className="customers-container">
-                        <TopHeader user={user} onAdd={() => alert("Add new customer")} onLogOut={onLogOut}/>
-                    </div>
-                </div>
-            </main>
-            <Sidebar user={user} />
+            <div className="profile-top-bar">
+                <TopHeader user={user} onAdd={() => alert("Add new customer")} onLogOut={onLogOut}/>
+            </div>
+
+            <div className="profile-side-bar">
+                <Sidebar user={user} />
+            </div>
         </div>
     );
 };

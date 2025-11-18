@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* stronger shadow for depth */
-    min-height: 100vh;
+    min-height: 60vh;
     transition: width 0.3s ease, padding 0.3s ease;
     border-right: 1px solid #e5e7eb; /* subtle separator */
 }

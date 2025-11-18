@@ -11,28 +11,23 @@
     align-items: center;
 }
 
-/* Right Main Section */
-.profile-main {
-    flex: 1;
+/* Profile Top bar */
+.profile-top-bar {
     display: flex;
-    justify-content: center; /* centers horizontally */
-    align-items: center; /* centers vertically */
-    padding: 40px;
-}
-
-/* Inner content wrapper for neat spacing */
-.profile-content {
-    max-width: 600px;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
+    padding: 2px 2px;
 }
 
-/* Title */
-.profile-title {
-    font-size: 28px;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 32px;
-    text-align: center;
+/* Profile Side bar */
+.profile-side-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2px 2px;
+    min-height: 50vh;
 }
 
 /* Responsive */
@@ -49,83 +44,3 @@
         padding: 24px 16px;
     }
 }
-
-/*!*.profile-card {*!*/
-/*!*    background: #fff;*!*/
-/*!*    padding: 2rem;*!*/
-/*!*    border-radius: 10px;*!*/
-/*!*    box-shadow: 0 3px 10px rgba(0,0,0,0.1);*!*/
-/*!*    text-align: center;*!*/
-/*!*    width: 320px;*!*/
-/*!*}*!*/
-
-/*!*.profile-picture {*!*/
-/*!*    width: 100px;*!*/
-/*!*    border-radius: 50%;*!*/
-/*!*    margin-bottom: 1rem;*!*/
-/*!*}*!*/
-
-/*!*.logout-btn {*!*/
-/*!*    background-color: #ff4b5c;*!*/
-/*!*    color: #fff;*!*/
-/*!*    border: none;*!*/
-/*!*    padding: 0.6rem 1.2rem;*!*/
-/*!*    border-radius: 5px;*!*/
-/*!*    cursor: pointer;*!*/
-/*!*    margin-top: 1rem;*!*/
-/*!*}*!*/
-
-/*!*.logout-btn:hover {*!*/
-/*!*    background-color: #e64550;*!*/
-/*!*}*!*/
-
-
-/*!* Profile Card *!*/
-/*.profile-card {*/
-/*    background-color: #ffffff;*/
-/*    padding: 40px 32px;*/
-/*    border-radius: 16px;*/
-/*    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/
-/*    text-align: center;*/
-/*    transition: transform 0.2s ease, box-shadow 0.2s ease;*/
-/*}*/
-
-/*.profile-card:hover {*/
-/*    transform: translateY(-2px);*/
-/*    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);*/
-/*}*/
-
-/*!* Profile Picture *!*/
-/*.profile-pic {*/
-/*    width: 120px;*/
-/*    height: 120px;*/
-/*    border-radius: 50%;*/
-/*    margin-bottom: 20px;*/
-/*    object-fit: cover;*/
-/*    border: 3px solid #2563eb;*/
-/*}*/
-
-/*!* Name *!*/
-/*.profile-name {*/
-/*    font-size: 22px;*/
-/*    font-weight: 600;*/
-/*    color: #1f2937;*/
-/*    margin-bottom: 8px;*/
-/*}*/
-
-/*!* Email *!*/
-/*.profile-email {*/
-/*    color: #4b5563;*/
-/*    margin-bottom: 16px;*/
-/*    font-size: 15px;*/
-/*}*/
-
-/*!* Google ID *!*/
-/*.profile-id {*/
-/*    font-size: 14px;*/
-/*    color: #6b7280;*/
-/*    background-color: #f9fafb;*/
-/*    padding: 8px 12px;*/
-/*    border-radius: 6px;*/
-/*    display: inline-block;*/
-/*}*/
