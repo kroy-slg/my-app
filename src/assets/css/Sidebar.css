@@ -1,0 +1,142 @@
+/* -------- Sidebar Container -------- */
+.sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* stronger shadow for depth */
+    min-height: 100vh;
+    transition: width 0.3s ease, padding 0.3s ease;
+    border-right: 1px solid #e5e7eb; /* subtle separator */
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 60px; /* shrink sidebar */
+    padding: 24px 8px;
+}
+
+/* Sidebar Header & Title */
+.sidebar-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111827;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-title {
+    opacity: 0; /* hide title when collapsed */
+}
+
+ /*Collapse Button */
+.collapse-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #6b7280;
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+.collapse-btn:hover {
+    color: #111827;
+}
+
+/* Navigation */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Sidebar Buttons */
+.sidebar-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #111827;
+    transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-btn:hover {
+    background-color: #f3f4f6;
+    transform: translateX(4px);
+    color: #2563eb; /* highlight on hover */
+}
+
+/* Active Menu Item (optional) */
+.sidebar-btn.active {
+    background-color: #e0e7ff; /* soft blue */
+    color: #1e40af; /* darker blue */
+    font-weight: 600;
+}
+
+/* Logout Button */
+.sidebar-logout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 16px;
+    color: #dc2626;
+    font-weight: 500;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-logout:hover {
+    transform: translateX(4px);
+    color: #b91c1c; /* darker red */
+}
+
+/* Icons */
+.sidebar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px; /* keep icons aligned */
+    color: #6b7280; /* neutral gray */
+}
+
+.sidebar-btn:hover .sidebar-icon,
+.sidebar-btn.active .sidebar-icon {
+    color: #2563eb; /* icon color matches text on hover */
+}
+
+.sidebar-logout .sidebar-icon {
+    color: #dc2626;
+}
+
+.sidebar-logout:hover .sidebar-icon {
+    color: #b91c1c;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        z-index: 1000;
+        height: 100vh;
+        left: -260px;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+}
+

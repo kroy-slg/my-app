@@ -6,6 +6,7 @@ import Services from "../src/components/pages/Services.jsx";
 import Contact from "../src/components/pages/Contact.jsx";
 import Profile from "../src/components/pages/Profile.jsx";
 import {useState} from "react";
+import MainLayout from "./components/layout/MainLayout.jsx";
 
 function App() {
     const [user, setUser] = useState(null);
@@ -23,7 +24,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/contact" element={<Contact />} />
-                {/*<Route path="/profile" element={<Profile />} />*/}
+                <Route path="/main-container" element={<MainLayout />} />
             </Routes>
         </>
     );

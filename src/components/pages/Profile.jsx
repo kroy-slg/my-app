@@ -1,6 +1,7 @@
 import React from "react";
 import "../../assets/css/Profile.css";
 import TopHeader from "../layout/TopHeader.jsx";
+import Sidebar from "../layout/Sidebar.jsx";
 
 const Profile = ({ user, onLogOut }) => {
     return (
@@ -8,14 +9,11 @@ const Profile = ({ user, onLogOut }) => {
             <main className="profile-main">
                 <div className="profile-content">
                     <div className="customers-container">
-                        <TopHeader
-                            user={user}
-                            onAdd={() => alert("Add new customer")}
-                            onLogOut={onLogOut}
-                        />
+                        <TopHeader user={user} onAdd={() => alert("Add new customer")} onLogOut={onLogOut}/>
                     </div>
                 </div>
             </main>
+            <Sidebar user={user} />
         </div>
     );
 };
