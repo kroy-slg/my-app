@@ -22,7 +22,7 @@ const ProfileButton = ({ user, onLogOut }) => {
                     user={user}
                     onClose={() => setShowProfile(false)}
                     onLogOut={() => {
-                        onLogOut();           // ✅ Call logout from parent
+                        onLogOut();
                         setShowProfile(false);
                     }}
                 />

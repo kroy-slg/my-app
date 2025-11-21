@@ -23,7 +23,7 @@ export default function GoogleAuth({ onLogin }) {
                     alt="Google icon"
                     className="google-icon"
                 />
-                Sign in with Google
+                Sign In
             </button>
         </div>
     );

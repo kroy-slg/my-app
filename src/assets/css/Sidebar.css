@@ -1,5 +1,6 @@
 /* -------- Sidebar Container -------- */
 .sidebar {
+    z-index: 1;
     width: 250px;
     background-color: #ffffff;
     padding: 24px;
@@ -24,8 +25,8 @@
     font-weight: 700;
     margin-bottom: 24px;
     color: #111827;
-    letter-spacing: 0.5px;
     transition: opacity 0.3s ease;
+    text-align: left;
 }
 
 .sidebar.collapsed .sidebar-title {
@@ -123,4 +124,14 @@
 
 .sidebar-logout:hover .sidebar-icon {
     color: #b91c1c;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 50%;
+        height: 100%;
+    }
+
 }

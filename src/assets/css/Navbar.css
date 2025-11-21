@@ -1,13 +1,13 @@
 /* ==== NAVBAR BASE ==== */
-.navbar {
+.navbar-main {
+    z-index: 10;
     position: fixed;
-    width: 100%;
-    padding: 20px 24px;
     display: flex;
+    width: 100%;
+    padding: 10px;
     align-items: center;
     justify-content: space-between;
     background: #ffffff;
-    z-index: 1000;
     transition: all 0.3s ease-in-out;
     box-sizing: border-box;
     border-bottom: 1px solid transparent;
@@ -20,27 +20,28 @@
 
 /* ==== BRAND ==== */
 .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #2a2a2a;
-    letter-spacing: 0.5px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #007bff;
     user-select: none;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .navbar-brand:hover {
-    color: #007bff;
+    color: #0056b3;
 }
 
 /* ==== NAV LINKS ==== */
 .nav-list {
     display: flex;
-    gap: 20px;
-    list-style: none;
+    flex-direction: row;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    margin: 2px;
+    padding: 5px;
 }
 
 .nav-item {
@@ -114,16 +115,15 @@
 
     .nav-list {
         position: absolute;
-        top: 65px;
-        right: 5%;
-        width: 90%;
+        top: 70px;
+        left: 50%;
+        width: 100%;
         flex-direction: column;
         background: white;
-        border-radius: 12px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        padding: 15px 0;
+        padding: 20px;
         display: none;
-        text-align: center;
+        text-align: left;
         transition: all 0.3s ease-in-out;
         transform: translateY(-20px);
         opacity: 0;

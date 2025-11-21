@@ -13,11 +13,12 @@
 
 /* Profile Top bar */
 .profile-top-bar {
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    padding: 2px 2px;
+    padding: 10px 10px;
 }
 
 /* Profile Side bar */
@@ -46,13 +47,17 @@
 
     .sidebar {
         position: initial;
-        z-index: 100;
         height: 70vh;
         transition: left 0.3s ease;
     }
 
     .sidebar.open {
         left: 0;
+    }
+
+    .profile-popup {
+        position: fixed;
+        padding: 10px;
     }
 
 }

@@ -29,7 +29,7 @@ const Navbar = () => {
     ];
 
     return (
-        <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+        <header className={`navbar-main ${scrolled ? "scrolled" : ""}`}>
             <div className="navbar-brand">TSR Invoice</div>
 
             {/* Hamburger toggle */}
