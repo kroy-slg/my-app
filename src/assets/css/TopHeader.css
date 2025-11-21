@@ -61,19 +61,6 @@
     color: #2563eb;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .top-search {
-        width: 100%;
-    }
-
-    .top-header {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-
 /* Profile Popup Modal */
 .profile-popup-overlay {
     position: fixed;
@@ -87,7 +74,6 @@
     align-items: center;
     z-index: 200;
 }
-
 
 .profile-popup {
     background: #fff;
@@ -151,6 +137,3 @@
         transform: scale(1);
     }
 }
-
-
-

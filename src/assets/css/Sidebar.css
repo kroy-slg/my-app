@@ -124,19 +124,3 @@
 .sidebar-logout:hover .sidebar-icon {
     color: #b91c1c;
 }
-
-/* Responsive for small screens */
-@media (max-width: 768px) {
-    .sidebar {
-        position: fixed;
-        z-index: 1000;
-        height: 100vh;
-        left: -260px;
-        transition: left 0.3s ease;
-    }
-
-    .sidebar.open {
-        left: 0;
-    }
-}
-
