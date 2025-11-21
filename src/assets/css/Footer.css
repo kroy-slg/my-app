@@ -1,0 +1,23 @@
+.footer {
+    width: 100%;
+    padding: 20px 0; /* slightly more breathing room */
+    background-color: #ffffff;
+    color: #6b7280; /* slightly softer gray for better readability */
+    text-align: center;
+    border-top: 1px solid #e5e7eb; /* subtle separation */
+    margin-top: auto; /* push footer to bottom */
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.03); /* subtle top shadow for depth */
+}
+
+.footer a {
+    color: #2563eb; /* blue links */
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    color: #1d4ed8; /* darker blue on hover */
+}

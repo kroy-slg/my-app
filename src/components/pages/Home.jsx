@@ -2,6 +2,7 @@ import React from "react";
 import GoogleAuth from "../services/auth/GoogleAuth.jsx";
 import "../../assets/css/Home.css";
 import {useNavigate} from "react-router-dom";
+import Footer from "../layout/Footer.jsx";
 
 const Home = ({user, onLogin, onLogout}) => {
     const navigate = useNavigate();
@@ -26,20 +27,25 @@ const Home = ({user, onLogin, onLogout}) => {
 
     return (
         <div className="home-container">
-            {!user ? (
-                <>
-                    <GoogleAuth user={user} onLogin={handleLogin} onLogout={onLogout} />
-                </>
-            ) : (
-                <>
-                    <h2 className="home-title">
-                        Hello <strong>{user.name}</strong> 👋
-                    </h2>
-                    <button className="logout-btn" onClick={handleLogout}>
-                        Logout
-                    </button>
-                </>
-            )}
+            <main className="home-main">
+                <div className="home-card">
+                    {!user ? (
+                        <>
+                            <GoogleAuth user={user} onLogin={handleLogin} onLogout={onLogout} />
+                        </>
+                    ) : (
+                        <>
+                            <h2 className="home-title">
+                                <strong>{user.name}</strong> 👋
+                            </h2>
+                            <button className="logout-btn" onClick={handleLogout}>
+                                Logout
+                            </button>
+                        </>
+                    )}
+                </div>
+            </main>
+            {!user && <Footer />}
         </div>
     );
 };

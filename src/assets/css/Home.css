@@ -1,13 +1,29 @@
 /* Container */
 .home-container {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f9fafb;
-    min-height: 80vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    background-color: #f9fafb
+}
+
+/* Main content area */
+.home-main {
+    flex: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5px;
+}
+
+/* Card in the center */
+.home-card {
+    background-color: #ffffff;
+    padding: 80px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
 }
 
 /* Heading */
